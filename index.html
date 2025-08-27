@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>ARM Assembler</title>
+    <link rel = "stylesheet" href = "style.css">
+    <script type = "module" src="./src/main.js"defer></script>
+
+</head>
+<body>
+    <div class = "main">
+    <header id = "header">
+    <label class = "title">AQA Assembler on AQA Instruction Set</label>
+    <nav class = "navigatorBar" >
+        <ul class = "nav_links">
+        <li><a href = "index.html" target = "_self" class = "active">Assembler</a></li>
+        <li><a href = "challenges.html" target = "_self" class = "active">Challenges</a></li>
+        <li><a href = "manual.html" target = "_self" class = "active">Manual</a></li>
+        <li><a href = "https://filestore.aqa.org.uk/resources/computing/AQA-75162-75172-ALI.PDF" target = "_blank" class = "active">Instruction Set</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <section class = "IDEContainer">
+        <textarea id="IDE" class = "IDE" placeholder="Code Here"></textarea>
+    </section>
+    <div class = "Container" id = "registersContainer">
+        <label class = "titles">Registers</label>
+        <br> <label class = "registers">R0:</label>
+        <input class = "registers" value="0" id = "R0">
+        <br> <label class = "registers">R1:</label>
+        <input class = "registers" value="0" id = "R1">
+        <br> <label class = "registers">R2:</label>
+        <input class = "registers" value="0" id = "R2">
+        <br> <label class = "registers">R3:</label>
+        <input class = "registers" value="0" id = "R3">
+        <br> <label class = "registers">R4:</label>
+        <input class = "registers" value="0" id = "R4">
+        <br> <label class = "registers">R5:</label>
+        <input class = "registers" value="0" id = "R5">
+        <br> <label class = "registers">R6:</label>
+        <input class = "registers" value="0" id = "R6">
+        <br> <label class = "registers">R7:</label>
+        <input class = "registers" value="0" id = "R7">
+        <br> <label class = "registers">R8:</label>
+        <input class = "registers" value="0" id = "R8">
+        <br> <label class = "registers">PC:</label>
+        <input class = "registers" value="0" id = "PC">
+        <br> <label class = "registers">SR:</label>
+        <input class = "registers" value="N/A" id = "SR">
+
+    </div>
+    <div class = "Container" id = "memoryContainer">
+        <label class = "titles">Memory/RAM</label>
+        <br> <label class = "registers">0:</label>
+        <input class = "registers" value="0" id = "M0">
+        <br> <label class = "registers">1:</label>
+        <input class = "registers" value="0" id = "M1">
+        <br> <label class = "registers">2:</label>
+        <input class = "registers" value="0" id = "M2">
+        <br> <label class = "registers">3:</label>
+        <input class = "registers" value="0" id = "M3">
+        <br> <label class = "registers">4:</label>
+        <input class = "registers" value="0" id = "M4">
+        <br> <label class = "registers">5:</label>
+        <input class = "registers" value="0" id = "M5">
+        <br> <label class = "registers">6:</label>
+        <input class = "registers" value="0" id = "M6">
+        <br> <label class = "registers">7:</label>
+        <input class = "registers" value="0" id = "M7">
+        <br> <label class = "registers">8:</label>
+        <input class = "registers" value="0" id = "M8">
+        <br> <label class = "registers">9:</label>
+        <input class = "registers" value="0" id = "M9">
+        <br> <label class = "registers">10:</label>
+        <input class = "registers" value="0" id = "M10">
+
+    </div>
+
+
+
+    <div class = "Container" id = "executesContainer">
+        <label class = "titles">Executes</label> <br>
+        <button id = "assembleButton">Assemble</button><button id = "disassembleButton">Disassemble</button><button id = "executeButton">Execute</button><button id = "stepButton">Step</button><button id = "stepBackButton">Step Back</button><button style = "margin-bottom: 20px;" id = "logExecuteButton">Log Execute</button> 
+        <label  style="display: inline-block; font-size: large;" type = "range">Speed:</label>
+        <input type = "range" id = "logExecuteSlider" min = "1" max = "100" value="50"  class = "slider" style="display: inline-block;">
+    </div>
+
+
+    <div class="Container" id="savesContainer">
+            <label class="titles">Saves</label>
+            <input id="fileNameInputSave" placeholder="fileName.asm" style="padding-top: 20px;"> 
+            <button id="saveLocalAsmButton">Save Program Locally (.asm)</button>
+            <button onclick="document.getElementById('uploadAsmLocal').click()" style="width: 100%;" id = "uploadAsmBtn">Upload file
+                (.asm)</button>
+            <input type="file" id="uploadAsmLocal" style="display:none;">
+        </div>
+
+
+    <div class = "Container" id = "logsContainer">
+        <label class = "titles" style="margin-bottom: 10px;">Program Logs</label>
+        <textarea placeholder="Program logs go here..." style="height: 90%;" readonly = true></textarea>
+    </div>
+
+
+    <div class = "Container" id = "exceptionsContainer">
+        <label class = "title">Exceptions</label> <br>
+        <textarea placeholder="Exceptions go here..." style="width: 100%; height: 70%;" id  = "errorBox"></textarea>
+        
+    </div>
+    </div>
+    
+
+</body>
+</html>

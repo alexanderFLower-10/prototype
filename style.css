@@ -1,0 +1,245 @@
+
+body {
+  font-family: 'Courier New Bold', monospace;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #14111A;
+    color: #edf0f1;
+}
+label{
+    display: inline-block;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    grid-area: header;
+}
+.title{
+    cursor: pointer;
+    font-size: xx-large;
+}
+.nav_links{
+    list-style: none;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_links li a{
+    font-size: x-large;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    
+}
+textarea{
+    resize: none;
+    outline: none;
+    border: 5px solid #191520;
+    border-radius: 10px;
+    background-color: #191520;
+    padding: 12px;
+    font-size: x-large;
+box-shadow: 
+    -4px -4px 10px #1f1b29,
+     4px 4px 10px #1f1b29,
+    -4px 4px 10px #1f1b29,
+     4px -4px 10px #1f1b29;
+
+
+}
+.nav_links li a:hover{
+    color: #A27AE4
+}
+#header{
+    grid-area: header;
+}
+#IDE{
+    width: 100%;
+    height: 100%;
+
+}
+#exceptionsContainer{
+    grid-area: Exceptions;
+}
+#registersContainer{
+    grid-area: Registers;
+}
+#memoryContainer{
+    grid-area: Memory;
+}
+#executesContainer{
+    grid-area: Executes;
+}
+#traceContainer{
+    grid-area: TraceTable;
+}
+#savesContainer{
+    grid-area: Saves;
+}
+#logsContainer{
+    grid-area: Logs;
+}
+#exceptionsContainer label{
+    flex: 0 0 auto;
+    margin-bottom: 8px;
+}
+.Container{
+    border: 5px solid #191520;
+    border-radius: 10px;
+    background-color: #191520;
+    padding: 12px;
+    box-shadow: 
+        -4px -4px 10px #1a171f,  
+         4px 4px 12px #0a0a0a;   
+}
+button{
+    margin-right: 10px;
+    margin-bottom: 5px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 5px solid #191520;
+    background-color: #191520;
+    padding: 3px;
+    box-shadow: 
+        -2px -2px 5px #1a171f,  
+         2px 2px 6px #0a0a0a;   
+    font-size: large;
+    cursor: pointer;
+    font-family: 'Courier New Bold', monospace;
+    transition: 
+        transform 0.1s ease-in-out,
+        box-shadow 0.1s ease-in-out,
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+}
+button:hover {
+    background-color: #3a2f50;
+    border-color: #3a2f50;
+}
+
+button:active {
+
+    transform: translateY(2px);
+    border-color: #5d3e91;
+    border-color: #5d3e91;
+    background-color: #5d3e91;
+}
+input{
+    margin-bottom: 5px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 5px solid #191520;
+    background-color: #191520;
+    padding: 3px;
+    box-shadow: 
+        -2px -2px 5px #1a171f,  
+         2px 2px 6px #0a0a0a;   
+    font-size: large;
+    font-family: 'Courier New Bold', monospace;
+}
+input.registers{
+    width: 65%;
+}
+label.registers{
+    margin-bottom: 5px;
+    width: 25%;
+    font-size: x-large;
+    background-color: #191520;
+}
+.breakpointsContainer{grid-area: Breakpoints ;}
+.IDEContainer{
+    grid-area: IDE;
+}
+
+label.titles{
+    font-size:xx-large;
+    background-color: #191520;
+    margin-bottom:5px;
+}
+.editable{
+    font-size: medium;
+    border: 5px solid #191520;
+    border-radius: 10px;
+    background-color: #191520;
+    padding: 2px;
+    font-size: 20px;
+    caret-color: #A27AE4;
+    box-shadow: -4px -4px 10px #1a171f,  4px 4px 12px #0a0a0a;   
+}
+.status-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #FF0000; 
+  border-radius: 50%;
+  box-shadow: 0 0 6px #FF0000AA; 
+  margin-left: 20px;
+}
+
+
+.main{
+    display: grid;
+    grid-template-areas:
+    "header header header header header"
+    "IDE Registers Memory Breakpoints Executes"
+    "IDE Registers Memory Saves Logs"
+    "Exceptions TraceTable TraceTable TraceTable Logs";
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1.75fr 3.5fr 3fr;
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 14px; /* Thicker bar */
+  background: linear-gradient(90deg, #2a2540 0%, #1f1b29 100%);
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-shadow: inset -2px -2px 5px #1a171f, inset 2px 2px 5px #0a0a0a;
+  transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;           /* Smaller thumb */
+  height: 16px;
+  background: #A27AE4;   /* Soft purple */
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(162, 122, 228, 0.6);
+  margin-top: -3px;      /* Centered on new thicker bar */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: #c4aaff;
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #A27AE4;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(162, 122, 228, 0.6);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background-color: #c4aaff;
+  transform: scale(1.1);
+}
